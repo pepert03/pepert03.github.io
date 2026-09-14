@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Algebraic reasoning distiller pipeline</title>
+  <desc id="desc">Pipeline from E1 and E2 through a parser, counterexample search, symbolic prover, RAG retriever, aggregator and LLM distiller to a verdict and cheat sheet.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f4f4f4"/>
+    </marker>
+    <style>
+      .box { fill: #202124; stroke: #f4f4f4; stroke-width: 3; }
+      .line { fill: none; stroke: #f4f4f4; stroke-width: 3; marker-end: url(#arrow); }
+      .label { fill: #f4f4f4; font-family: Arial, sans-serif; text-anchor: middle; }
+      .main { font-size: 27px; }
+      .sub { font-size: 16px; }
+      .tiny { font-size: 14px; }
+    </style>
+  </defs>
+  <rect width="1000" height="1000" fill="#202124"/>
+  <rect class="box" x="70" y="65" width="170" height="82" rx="18"/>
+  <text class="label main" x="155" y="115">E1, E2</text>
+  <rect class="box" x="300" y="48" width="610" height="116" rx="18"/>
+  <text class="label main" x="605" y="112">Planner (parser)</text>
+  <path class="line" d="M240 106 H300"/>
+  <path class="line" d="M605 164 V218"/>
+  <text class="label sub" x="635" y="198">AST</text>
+  <path class="line" d="M605 218 H180 V265"/>
+  <path class="line" d="M605 218 V265"/>
+  <path class="line" d="M605 218 H820 V265"/>
+  <rect class="box" x="55" y="265" width="250" height="110" rx="18"/>
+  <text class="label main" x="180" y="310">Counterexample</text>
+  <text class="label sub" x="180" y="340">(magma search)</text>
+  <rect class="box" x="430" y="265" width="350" height="110" rx="18"/>
+  <text class="label main" x="605" y="310">Symbolic Prover</text>
+  <text class="label sub" x="605" y="340">(term rewriting)</text>
+  <rect class="box" x="820" y="265" width="150" height="110" rx="18"/>
+  <text class="label main" x="895" y="310">RAG</text>
+  <text class="label sub" x="895" y="340">Retriever</text>
+  <text class="label tiny" x="895" y="360">(Chroma + SBERT)</text>
+  <path class="line" d="M180 375 V415 H605 V455"/>
+  <path class="line" d="M605 375 V455"/>
+  <path class="line" d="M895 375 V415 H605 V455"/>
+  <rect class="box" x="395" y="455" width="420" height="105" rx="18"/>
+  <text class="label main" x="605" y="500">Aggregator</text>
+  <text class="label sub" x="605" y="530">counterex &gt; proof &gt; retrieved</text>
+  <path class="line" d="M605 560 V625"/>
+  <rect class="box" x="395" y="625" width="420" height="105" rx="18"/>
+  <text class="label main" x="605" y="670">LLM Distiller</text>
+  <text class="label sub" x="605" y="700">Qwen2.5-7B + LoRA (SFT -&gt; GRPO)</text>
+  <path class="line" d="M605 730 V775 H285 V820"/>
+  <path class="line" d="M605 775 H800 V820"/>
+  <rect class="box" x="70" y="820" width="430" height="105" rx="18"/>
+  <text class="label main" x="285" y="865">Per-problem verdict</text>
+  <text class="label sub" x="285" y="892">&lt;think&gt;...&lt;/think&gt;</text>
+  <text class="label tiny" x="285" y="912">&lt;answer&gt;VERDICT...&lt;/answer&gt;</text>
+  <rect class="box" x="575" y="820" width="355" height="105" rx="18"/>
+  <text class="label main" x="752" y="865">Cheat sheet (&lt;= 10 KB)</text>
+  <text class="label sub" x="752" y="895">written offline, injected at test time</text>
+</svg>
