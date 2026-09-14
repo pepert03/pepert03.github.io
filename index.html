@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="data:,">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>José Ridruejo Tuñón</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..700;1,400&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #212529;
+    margin: 0;
+    background: #ffffff;
+  }
+  h1, h2, h3, h4 { font-family: 'Roboto Slab', serif; font-weight: 700; }
+  .narrow { max-width: 700px; margin: 0 auto; padding: 0 16px; }
+  .wide { max-width: 900px; margin: 60px auto 0 auto; padding: 0 16px; }
+  #top { margin-top: 30px; }
+  h1.name { font-size: 2em; margin: 0 0 4px 0; }
+  p.contact { margin: 0 0 40px 0; font-size: 0.95em; color: #555; }
+  a { color: #2a5db0; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .about-row { display: flex; gap: 32px; align-items: flex-start; }
+  .about-photo { flex: 0 0 33%; }
+  .about-photo img { width: 100%; border-radius: 6px; }
+  .about-text { flex: 1 1 auto; }
+  .about-text h3 { margin-top: 0; font-size: 1.3em; }
+  p { margin: 0.6em 0; }
+  h2 { font-size: 1.5em; margin: 0 0 10px 0; }
+  .proj-row { display: flex; gap: 28px; margin-top: 40px; align-items: flex-start; }
+  .proj-imgbox {
+    flex: 0 0 55%;
+    border: 1px solid #dee2e6;
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .proj-imgbox img { display: block; margin: 0 auto; max-width: 100%; max-height: 300px; }
+  .proj-text { flex: 1 1 auto; }
+  .proj-text h4 { font-size: 1.15em; margin: 0 0 8px 0; }
+  .proj-solo { margin-top: 40px; }
+  .proj-solo h4 { font-size: 1.15em; margin: 0 0 8px 0; }
+  ul.pubs { padding-left: 1.4em; margin: 0.5em 0; }
+  ul.pubs li { margin: 0.5em 0; }
+  #footer { margin-top: 80px; padding: 16px; text-align: center; font-size: 0.85em; color: #888; }
+  @media (max-width: 760px) {
+    .proj-row, .about-row { flex-direction: column; }
+    .proj-imgbox, .about-photo { flex-basis: auto; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="narrow" id="top">
+  <h1 class="name">José Ridruejo Tuñón</h1>
+  <p class="contact">
+    Madrid, Spain &middot;
+    <a href="https://www.linkedin.com/in/peperidruejo">LinkedIn</a> &middot;
+    <a href="https://github.com/pepert03">GitHub</a> &middot;
+    <a href="mailto:joseridruejotunon@gmail.com">joseridruejotunon@gmail.com</a>
+  </p>
+
+  <div class="about-row">
+    <div class="about-photo"><img src="img/profile.jpg" alt="José Ridruejo Tuñón"></div>
+    <div class="about-text">
+      <h3>Hi!</h3>
+      <p>I am finishing an MSc in Advanced Artificial Intelligence at Comillas ICAI in Madrid, where I work on deep reinforcement learning, world models and reasoning models, with a second thread in machine learning for structural biology.</p>
+      <p>In the summer of 2026 I was a G-RIPS research fellow at Zuse Institute Berlin (Freie Universität Berlin) together with IPAM (UCLA), where I worked on sparse view X ray 3D reconstruction of biological structures. Our method, X-SplineHer, beat NeRF and Gaussian Splatting based baselines, and the work became an oral paper at Off Grid 2026, with an extended version under review at 3DV 2027.</p>
+      <p>Earlier I spent a semester as an exchange student in computer science at the Colorado School of Mines, and a summer as a Data and AI intern at Accenture. I like taking methods from papers to working code, and I keep most of what I build on GitHub.</p>
+    </div>
+  </div>
+
+  <h2 style="margin-top: 50px;">Publications</h2>
+  <ul class="pubs">
+    <li><b>Return of the Splines.</b> Oral at Off Grid 2026; extended version under review at 3DV 2027. Sparse view X ray 3D reconstruction of biological structures with hierarchical spline fields. <a href="https://openreview.net/forum?id=QLFMjKQFJm">OpenReview</a></li>
+  </ul>
+</div>
+
+<div class="wide">
+  <h2>Some Projects</h2>
+
+  <div class="proj-row">
+    <div class="proj-imgbox"><img src="img/r2dreamer.png" alt="CarRacing environment controlled by the R2-Dreamer agent"></div>
+    <div class="proj-text">
+      <h4>R2-Dreamer: World Models for Visual Continuous Control</h4>
+      <p>A world model without a pixel decoder, implemented in PyTorch: RSSM with Block GRU and Gumbel Softmax latents, a Barlow Twins loss replacing the DreamerV3 pixel decoder (about 1.6x faster training), and a TwoHot distributional critic. Scores: 941 on CarRacing v3, 21711 on Hopper v5, 927 on Walker Walk. <a href="https://github.com/pepert03/driving-world-model">Code</a> &middot; <a href="https://github.com/pepert03/driving-world-model/blob/main/Report/main.pdf">Report</a></p>
+    </div>
+  </div>
+
+  <div class="proj-row">
+    <div class="proj-imgbox"><img src="img/microfold.svg" alt="Predicted peptide backbone compared with the ground truth structure"></div>
+    <div class="proj-text">
+      <h4>Microfold: 3D Peptide Structure Prediction</h4>
+      <p>An AlphaFold inspired geometric deep learning architecture that predicts 3D peptide backbones from frozen ESM-2 embeddings, with a simplified Invariant Point Attention module and FAPE loss on DBAASP: 2.84 Angstrom mean validation RMSD on 44 held out peptides. <a href="https://github.com/pepert03/microfold">Code</a> &middot; <a href="https://github.com/pepert03/microfold/blob/main/report/minifold.pdf">Report</a></p>
+    </div>
+  </div>
+
+  <div class="proj-solo">
+    <h4>Uncertainty Aware Brain Tumor Segmentation</h4>
+    <p>Implementation and comparison of 8 uncertainty aware U-Net variants on BraTS 2018, with unified training, calibration and uncertainty metrics, and Bayesian hyperparameter optimization. <a href="https://github.com/joaquinmaciias/Uncertainty-Aware-BrainTumor-Segmentation">Code</a></p>
+  </div>
+
+  <div class="proj-row">
+    <div class="proj-imgbox"><img src="img/rainbow.png" alt="Hopper environment controlled by the Rainbow DQN agent"></div>
+    <div class="proj-text">
+      <h4>Deep Reinforcement Learning: Rainbow DQN for Visual Environments</h4>
+      <p>Rainbow DQN built from scratch in PyTorch for pixel based MuJoCo control (Hopper, Walker2d, Humanoid): all six Rainbow components, mixed precision, uint8 replay buffer, about 4x vanilla DQN on Hopper (3692 vs 918). <a href="https://github.com/pepert03/DQN-Rainbow-Pixel-Control">Code</a> &middot; <a href="https://github.com/pepert03/DQN-Rainbow-Pixel-Control/blob/main/Report/main.pdf">Report</a></p>
+    </div>
+  </div>
+
+  <div class="proj-row">
+    <div class="proj-imgbox"><img src="img/ppo_curves.png" alt="Training curves: mean reward, actor loss, critic loss and entropy"></div>
+    <div class="proj-text">
+      <h4>PPO vs SAC for Pixel Based Locomotion</h4>
+      <p>PPO and discrete SAC pipelines for Hopper v5 from pixel observations, with replay buffer training, logging, checkpointing and evaluation videos. <a href="https://github.com/Javirios03/P3_PPO_SAC">Code</a> &middot; <a href="https://github.com/Javirios03/P3_PPO_SAC/blob/master/Report/main.pdf">Report</a></p>
+    </div>
+  </div>
+
+  <div class="proj-solo">
+    <h4>Reasoning Models: SFT, Tool Use, RAG and ReAct Agent</h4>
+    <p>A reasoning stack built in several stages: LoRA fine tuning, tool calling, retrieval augmented generation over Chroma, and a ReAct agent loop exposed through FastAPI endpoints. <a href="https://github.com/miguel-montes-lorenzo/q2p1-reasoning-models">Code</a></p>
+  </div>
+
+  <div class="proj-solo">
+    <h4>NLP2: LLM Fine Tuning and IFEval</h4>
+    <p>Benchmarked and fine tuned open LLMs (Llama, Mistral, Qwen, Granite) with LoRA and SFT pipelines, evaluated on instruction following with IFEval. <a href="https://github.com/mntsx/NLP2-final-project">Code</a></p>
+  </div>
+
+  <div class="proj-solo">
+    <h4>Self Supervised Learning with SimCLR</h4>
+    <p>Reproduction and extension of SimCLR on CIFAR 10 and STL10: ResNet encoders, NT-Xent contrastive learning, linear probing and latent space visualization with t-SNE and PCA.</p>
+  </div>
+
+  <div class="proj-row">
+    <div class="proj-imgbox"><img src="img/algebraic.png" alt="Pipeline diagram of the algebraic reasoning distiller"></div>
+    <div class="proj-text">
+      <h4>Algebraic Reasoning Distiller: Multi Agent Math Pipeline</h4>
+      <p>An offline multi agent system (counterexample search, symbolic prover and RAG) plus a LoRA distiller that synthesizes a compact cheat sheet for SAIR equational reasoning. <a href="https://github.com/joaquinmaciias/Algebraic-Reasoning-Distiller">Code</a> &middot; <a href="https://github.com/joaquinmaciias/Algebraic-Reasoning-Distiller/blob/main/report/main.pdf">Report</a></p>
+    </div>
+  </div>
+
+  <div class="proj-solo">
+    <h4>Probabilistic Methods: Electoral Opinion Dynamics</h4>
+    <p>A Markov voter model with zealots over retweet graphs to estimate political opinion equilibria, built with Polars and sparse Torch on social data.</p>
+  </div>
+
+  <div class="proj-solo">
+    <h4>Differential Geometry: Dimensionality Reduction Autoencoder</h4>
+    <p>An autoencoder combined with Laplacian Eigenmaps and UMAP for dimensionality reduction. <a href="https://github.com/adrianlanchares/umap-autoencoder">Code</a></p>
+  </div>
+
+  <div class="proj-solo">
+    <h4>Bachelor's Thesis: AI for Data Compression</h4>
+    <p>A compact Variational Autoencoder using PEFT and LoRA techniques for data compression.</p>
+  </div>
+
+  <div class="proj-row">
+    <div class="proj-imgbox"><img src="img/caption.png" alt="Example captions generated by the model"></div>
+    <div class="proj-text">
+      <h4>Image Captioning with CNN RNN</h4>
+      <p>An encoder decoder captioning model (InceptionV3 + LSTM) with greedy and beam decoding, evaluated with BLEU and CIDEr on Flickr8K and Flickr30K. <a href="https://github.com/emmareysanchez/ImageCaptioning">Code</a></p>
+    </div>
+  </div>
+
+  <div class="proj-row">
+    <div class="proj-imgbox"><img src="img/turtlebot.png" alt="Planned RRT path for the TurtleBot3"></div>
+    <div class="proj-text">
+      <h4>TurtleBot3 Autonomous Navigation in ROS 2</h4>
+      <p>An autonomous navigation stack for a TurtleBot3 Burger on ROS 2 Humble: finite state machine wall following controller, Monte Carlo particle filter localization with systematic resampling and DBSCAN, RRT* planner with gradient descent path smoothing, and a pure pursuit tracker, validated in CoppeliaSim and on the real robot. <a href="https://github.com/pepert03/turtlebot">Code</a></p>
+    </div>
+  </div>
+
+  <div class="proj-solo">
+    <h4>OreCart: Live Shuttle Tracking UI</h4>
+    <p>A React and Leaflet frontend for real time route and vehicle tracking, with user and driver modes, geolocation streaming and route visualization. Built during my exchange at the Colorado School of Mines. <a href="https://github.com/John-Jagger/orecart_frontend">Code</a></p>
+  </div>
+
+  <div class="proj-solo">
+    <h4>Tracker Backend: Real Time Location Service</h4>
+    <p>The Django and Channels backend behind OreCart: WebSocket broadcasting and persistence of driver GPS coordinates, with REST access to the latest location snapshots.</p>
+  </div>
+
+  <div class="proj-solo">
+    <h4>Blockchain Node and Consensus API</h4>
+    <p>A Python blockchain with Proof of Work mining, a transaction mempool, chain validation, node registration and conflict resolution through a Flask API. <a href="https://github.com/pepert03/blockchain">Code</a></p>
+  </div>
+
+  <div class="proj-solo">
+    <h4>Modular Arithmetics and Cybersecurity: Encrypted Chat</h4>
+    <p>An end to end encrypted chat over a stateless WebSocket relay, with RSA encryption implemented on custom modular arithmetic libraries. <a href="https://github.com/pepert03/rsa-encryption">Code</a></p>
+  </div>
+
+  <div class="proj-solo">
+    <h4>Voronoi and Delaunay Visualization</h4>
+    <p>Geometric visualization in Python of Voronoi diagrams and Delaunay triangulations, with divide and conquer merging and tangent and mediatrix construction. <a href="https://github.com/pepert03/voronoi">Code</a></p>
+  </div>
+
+  <div class="proj-solo">
+    <h4>Paper Piano: Computer Vision Interaction System</h4>
+    <p>A vision pipeline with camera calibration, shape detection, sequence decoding and object tracking, driving a virtual paper piano. <a href="https://github.com/Javirios03/paper-piano">Code</a></p>
+  </div>
+
+  <div class="proj-solo">
+    <h4>A Dice Game: Godot Puzzle and Strategy Game</h4>
+    <p>A tactical puzzle game in Godot with constrained dice placement, pattern based attacks, solution hints, progression modes and animated transitions. <a href="https://github.com/pepert03/dice-game">Code</a></p>
+  </div>
+
+  <div class="proj-row">
+    <div class="proj-imgbox"><img src="img/riley.png" alt="Riley Goes For A Walk game logo"></div>
+    <div class="proj-text">
+      <h4>Riley Goes For A Walk: Unity Tactics Game</h4>
+      <p>A turn based hex grid tactics game in Unity and C#, with procedural level generation, BFS pathfinding, enemy AI and WebGL deployment. <a href="https://github.com/sergihrs/Riley-Goes-For-A-Walk">Code</a></p>
+    </div>
+  </div>
+
+  <div class="proj-solo">
+    <h4>Chesspert</h4>
+    <p>A chess focused project.</p>
+  </div>
+</div>
+
+<div id="footer">José Ridruejo Tuñón</div>
+
+</body>
+</html>
